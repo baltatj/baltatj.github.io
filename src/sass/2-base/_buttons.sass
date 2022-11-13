@@ -1,0 +1,11 @@
+button
+    transition: background-color 500ms ease, border 500ms ease
+    &:disabled
+        background: var(--color-greyscale-2)
+        color: var(--color-greyscale-3)
+        &:hover
+            background: var(--color-greyscale-2)
+            color: var(--color-greyscale-3)
+            border-color: var(--color-greyscale-3)
+    &.round
+        border-radius: 50%

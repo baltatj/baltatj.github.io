@@ -1,60 +1,159 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Container, Skeleton, Typography } from "@mui/material";
+import { Container, Link, Skeleton, Typography } from "@mui/material";
+import {
+  FilterTag,
+  ImageSlideshow,
+  ProjectListing,
+  TagsList,
+} from "~components";
 
 import "./LandingPage.sass";
-import { ImageSlideshow } from "~components";
 
 const LandingPage = ({ ...props }: {}) => {
   return (
     <div className="landing-page" {...props}>
+      <div className="header">
+        <span>Header</span>
+        <ul className="socials">
+          <li>
+            <Link
+              target={"_blank"}
+              href="https://www.xing.com/profile/Jeremy_Baltat/cv"
+            >
+              Xing
+            </Link>
+          </li>
+          <li>
+            <Link
+              target={"_blank"}
+              href="https://www.linkedin.com/in/jeremy-baltat-61883466/"
+            >
+              LinkedIn
+            </Link>
+          </li>
+        </ul>
+      </div>
       <Typography variant="h1" component="h1">
         Portfolio
       </Typography>
 
       <Container className="container" maxWidth="lg">
-        <Typography variant="h2" component="h2">
-          Vivents
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid xs={12} md={8}>
-            <ImageSlideshow />
-          </Grid>
-          <Grid xs={12} md={4}>
-            <p>
-              Kompletter Aufbau von neuer Codebasis (WebGL+ HMTL-UI)
-              -Kombination 3D-Lightbaking-Workflow-Entwicklung Blender-Addon
-              Websocketverbindung CMS-Anbindung Text-/Videochat-Integration
-              React-Statemanagement CMS-Styling Blender-Arbeiten UI-Designs in
-              Figma/AdobeXD
-            </p>
-            <p>
-              incidunt laborum vero eligendi beatae adipisci! Sunt cum maiores
-              illum dolorum error, nulla sequi natus. Lorem ipsum, dolor sit
-              amet consectetur adipisicing elit. Doloremque quisquam excepturi
-              dolore ullam quam eius minus officia facere, perspiciatis rerum?
-            </p>
-          </Grid>
-        </Grid>
+        <ProjectListing
+          headline="Vivents"
+          left={
+            <ImageSlideshow
+              pics={[
+                "static/pics/vivents/img01.jpg",
+                "static/pics/vivents/img02.jpg",
+                "static/pics/vivents/img03.jpg",
+                "static/pics/vivents/img04.jpg",
+                "static/pics/vivents/img05.jpg",
+                "static/pics/vivents/img06.jpg",
+              ]}
+            />
+          }
+          right={
+            <>
+              <p>
+                Produktentwicklung einer Event-/Seminarplatform als
+                Web-Applikation mit interaktiven 3D-Szenen
+              </p>
+              <ul className="decorated">
+                <li>Direkte Mitarbeit von ab Start des Projekts.</li>
+                <li>
+                  Teilnehmer können via Text und Videochat miteinander
+                  kommunizieren.
+                </li>
+                <li>
+                  Anschauen von Video(live)streams innerhalb der 3D-Szene
+                  möglich.
+                </li>
+                <li>
+                  In Zusammenarbeit mit 3D-Artist-Kollegen eine
+                  Workflow-Entwicklung für das Lightbaking der 3D-Modelle zur
+                  Leistungsoptimierung. Zur Vereinfachung der Workflowschritte
+                  wurde ein eigenes Blender-Addon entwickelt.
+                </li>
+              </ul>
 
-        <Typography variant="h2" component="h2">
-          PufferSphere-SAP-Landscape
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid xs={8}>
-            <Skeleton variant="rectangular" height={500} />
-            <Skeleton variant="rectangular" height={300} />
-          </Grid>
-          <Grid xs={4}>
-            <p>
-              Pufferfish-Sphere: Touch Unity Sphere-Projection CMS-Anbindung
-            </p>
-            <p>
-              Webversion: CMS-Anbindung Rendering Character-Animation
-              Kamera-Steuerung
-            </p>
-          </Grid>
-        </Grid>
+              <span className="creation-date">Created: 2020-2022</span>
+              <TagsList
+                tags={[
+                  "JS/TS",
+                  "React",
+                  "Websocket",
+                  "REST",
+                  "GraphQL",
+                  "Directus CMS",
+                  "Webpack",
+                  "Python",
+                  "WebGL",
+                  "ThreeJS",
+                  "Blender",
+                  "Figma",
+                  "18n",
+                  "Git",
+                  "CSS/SASS",
+                ]}
+              />
+            </>
+          }
+        />
+        <ProjectListing
+          headline="Sphere-Landscape"
+          left={
+            <ImageSlideshow
+              pics={[
+                "static/pics/sphere-landscape/img01.jpg",
+                "static/pics/sphere-landscape/img02.jpg",
+              ]}
+            />
+          }
+          right={
+            <>
+              <h3>Das Projekt besteht aus zwei Teilen:</h3>
+              <p>
+                <ul className="decorated">
+                  <li>
+                    1. Unity-Applikation Pufferfish Kugeldisplay mit
+                    Touch-Steuerung
+                  </li>
+                  <li>2. Web-Applikation mit interaktiver 3D-Szene</li>
+                </ul>
+              </p>
+              <p>
+                Beide Applikationen haben eine Anbindung an ein CMS, das vom
+                Kunden eigenständig mit Inhalten gepflegt werden kann.
+                {/* Webversion: CMS-Anbindung Rendering Character-Animation
+              Kamera-Steuerung */}
+              </p>
+              <hr />
+
+              <h3>Unity-Applikation:</h3>
+              <p>
+                Weiterleitung von Touch-Daten der Kugel mithilfe des
+                TUIO-Protokolls. Implementierung von Touch-Steuerung zur
+                3D-Navigation in der Szene und Wechseln von 2D-Inhalten im UI
+              </p>
+              <p>
+                Mathematische Kugelprojektion("Azimuthal equidistant
+                projection") zur Darstellung der 3D-Szene auf dem Kugeldisplay:{" "}
+                <br /> Cubemap-Kamera -&gt; Azimuthal projection-plane
+              </p>
+
+              <p></p>
+              <hr />
+              <h3>Web-Applikation:</h3>
+              <p>3D-Charaktersteuerung mit Navmesh-Pathfinding in der Szene</p>
+
+              <span className="creation-date">Created: 2021-2022</span>
+              <TagsList
+                tags={["Unity", "Unity-UI-Toolkit", "GraphQL", "ThreeJS"]}
+              />
+            </>
+          }
+        />
 
         <Typography variant="h2" component="h2">
           HairModelling-projekt

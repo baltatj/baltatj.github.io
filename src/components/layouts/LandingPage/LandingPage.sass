@@ -1,5 +1,38 @@
 body
-  background-color: #ddd
+  background-color: #383838
+
 .landing-page
+
+  .header
+    background-color: #585858
+    padding: 10px
+    display: flex
+    justify-content: space-between
+    align-content: center
+    ul.socials
+      display: flex
+      gap: 10px
+      background-color: #747474
+      color: white
+
   .container
-    background-color: #eee
+    background-color: #2e2e2e
+    color: var(--color-greyscale-1)
+    border-radius: 10px
+    padding: 20px
+    ul
+      &.decorated
+        list-style-type: disc
+        li
+          margin-left: 20px
+
+      li
+        margin-bottom: 5px
+        line-height: 1.15rem
+    p
+      margin: 10px 0
+  .creation-date
+    display: block
+    margin: 20px 0px
+    font-size: 0.85rem
+    color: var(--color-greyscale-2)

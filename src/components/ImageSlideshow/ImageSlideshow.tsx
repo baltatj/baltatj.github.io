@@ -3,12 +3,8 @@ import { useEffect, useState } from "react";
 // Style
 import "./ImageSlideshow.sass";
 
-export const ImageSlideshow = ({}: {}) => {
+export const ImageSlideshow = ({ pics }: { pics: Array<string> }) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [images, setImages] = useState([
-    "static/pics/slideshow01/01.jpg",
-    "static/pics/slideshow01/02.jpg",
-  ]);
 
   useEffect(() => {
     console.log("selectedIndex: ", selectedIndex);
@@ -29,27 +25,30 @@ export const ImageSlideshow = ({}: {}) => {
           className={`${selectedIndex > 0 ? "" : "hide"}`}
           onClick={() => prevSlide()}
         >
-          Left
+          ◄
         </button>
         <div className="progress-dots">
-          {Array.from(Array(images.length)).map((e, i) => {
+          {Array.from(Array(pics.length)).map((e, i) => {
             return (
               <div
-                key={"oeiaoei" + i}
+                key={"progress-dot" + i}
                 className={`${i} ${i === selectedIndex ? "active" : ""}`}
+                onClick={() => {
+                  setSelectedIndex(i);
+                }}
               ></div>
             );
           })}
         </div>
         <button
-          className={`${selectedIndex < images.length - 1 ? "" : "hide"}`}
+          className={`${selectedIndex < pics.length - 1 ? "" : "hide"}`}
           onClick={() => nextSlide()}
         >
-          Right
+          ►
         </button>
       </div>
 
-      <img src={images[selectedIndex]} alt="" />
+      <img src={pics[selectedIndex]} alt="" />
     </div>
   );
 };

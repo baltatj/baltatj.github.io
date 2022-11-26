@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import { Container, Link, Skeleton, Typography } from "@mui/material";
+import { Avatar, Container, Link, Skeleton, Typography } from "@mui/material";
 import {
   FilterTag,
   ImageSlideshow,
@@ -13,7 +13,7 @@ import "./LandingPage.sass";
 const LandingPage = ({ ...props }: {}) => {
   return (
     <div className="landing-page" {...props}>
-      <div className="header">
+      {/* <div className="header">
         <span>Header</span>
         <ul className="socials">
           <li>
@@ -33,11 +33,43 @@ const LandingPage = ({ ...props }: {}) => {
             </Link>
           </li>
         </ul>
-      </div>
-      <Container className="" maxWidth="lg">
-        <Typography variant="h1" component="h1">
-          Portfolio
-        </Typography>
+      </div> */}
+      <Container className="intro-container" maxWidth="lg">
+        <Grid container spacing={2}>
+          <Grid xs={12} md={6}>
+            {/* <img src={"pics/portrait/jb-circle.png"} alt="" /> */}
+            <Avatar
+              className="avatar-self"
+              alt="Myself"
+              src="pics/portrait/jb-circle.png"
+              sx={{ width: 256, height: 256 }}
+            />
+          </Grid>
+          <Grid xs={12} md={6}>
+            <Typography variant="h1" component="h1" color={"#ffd375"}>
+              Hi!
+            </Typography>
+
+            <Typography variant="h4" component="h4" mb={3}>
+              mein Name ist Jeremy Baltat
+            </Typography>
+
+            <Typography variant="subtitle1" gutterBottom>
+              Folgend meine vergangenen Projekten, bei denen ich mitgewirkt
+              habe. Diese sind teils während meines Informatikstudium, teils in
+              der Freizeit oder während einer Firmenanstellung entstanden.
+            </Typography>
+
+            <Typography variant="subtitle2" gutterBottom>
+              Neben meiner Arbeit als Software-Entwickler habe ich noch kreative
+              Freizeitaktivitäten. Falls du dazu etwas sehen möchtest,{" "}
+              <Link href="/art" underline="hover" color={"#ffd375"}>
+                schaue hier
+              </Link>
+              .
+            </Typography>
+          </Grid>
+        </Grid>
       </Container>
 
       <Container className="container" maxWidth="lg">
@@ -46,10 +78,10 @@ const LandingPage = ({ ...props }: {}) => {
           left={
             <ImageSlideshow
               pics={[
+                "pics/vivents/img04.jpg",
                 "pics/vivents/img01.jpg",
                 "pics/vivents/img02.jpg",
                 "pics/vivents/img03.jpg",
-                "pics/vivents/img04.jpg",
                 "pics/vivents/img05.jpg",
                 "pics/vivents/img06.jpg",
               ]}
@@ -225,7 +257,15 @@ const LandingPage = ({ ...props }: {}) => {
         />
         <ProjectListing
           headline="Unreal-Engine 4 3rd-Person Spiel"
-          left={<ImageSlideshow pics={["pics/arms-unloaded/img01.jpg"]} />}
+          left={
+            <ImageSlideshow
+              pics={[
+                "pics/arms-unloaded/img02.jpg",
+                "pics/arms-unloaded/img01.jpg",
+                "pics/arms-unloaded/logo-display.jpg",
+              ]}
+            />
+          }
           right={
             <>
               <span className="creation-date">&#47;&#47; 2017 - 2018</span>
@@ -261,7 +301,7 @@ const LandingPage = ({ ...props }: {}) => {
         />
         <ProjectListing
           headline="Bachelor-Abschlussarbeit"
-          left={<ImageSlideshow pics={["pics/vita/img01.jpg"]} />}
+          left={<ImageSlideshow pics={["pics/placeholder.jpg"]} />}
           right={
             <>
               <span className="creation-date">&#47;&#47; 2020</span>

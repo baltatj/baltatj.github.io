@@ -20,16 +20,11 @@
       "~components": ["src/components"],
       "~enums": ["src/enums"],
       "~layouts": ["src/components/layouts"],
-      "~types": ["src/types"]
+      "~types": ["src/types"],
+      "~fonts": ["src/fonts"]
     }
   },
   "include": ["src"],
-  // "exclude": ["**/node_modules/**/*", "src/stories/**/*"],
-  // "lint": [
-  //   {
-  //     "exclude": ["**/node_modules/**/*", "src/stories/**/*"]
-  //   }
-  // ],
 
   "references": [{ "path": "./tsconfig.node.json" }]
 }

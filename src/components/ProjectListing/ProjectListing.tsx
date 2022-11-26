@@ -14,16 +14,20 @@ export const ProjectListing = ({
 }) => {
   return (
     <div className="project-listing">
-      <Typography variant="h2" component="h2">
+      {/* <Typography variant="h2" component="h2">
         {props.headline}
-      </Typography>
+      </Typography> */}
       <Grid container spacing={2}>
         <Grid xs={12} md={8}>
           {/* LEFT CHILDREN */}
+
           {props.left}
         </Grid>
         <Grid xs={12} md={4}>
           {/* RIGHT CHILDREN */}
+          <Typography variant="h4" component="h4">
+            {props.headline}
+          </Typography>
           {props.right}
         </Grid>
       </Grid>

@@ -1,5 +1,5 @@
 export type tagLabels =
-  | "JS/TS"
+  | "TypeScript"
   | "React"
   | "mobX"
   | "Websocket"
@@ -21,6 +21,7 @@ export type tagLabels =
   | "18n"
   | "Git"
   | "CSS/SASS"
+  | "IMGUI"
   | "C++"
   | "C#"
   | "Perforce"
@@ -29,4 +30,6 @@ export type tagLabels =
   | "PS-Vita SDK"
   | "NPR"
   | "Non-photorealistic rendering"
+  | "Photogrammetry"
+  | "Motion-Capture"
   | "TUIO";

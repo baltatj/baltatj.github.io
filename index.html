@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" /> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmCxUAIws1pWpqAAACi0lEQVRIx63Vv4sdVRQH8M+dN5vnxmwiYbUTVBQsIhYqKAqCIhhX8D+wypYiahGIErGwSJFYiY2Npk1QElBrMQuamGARMI0kjT/IBtSs6+6+efO12JfxuW8Du4n3wjBzz7nf+X7PPecekekcyPmsZDtjJedzINNRMu1Q8+bZnd9YsvWxyzOeWK4/8L7MN0vHsje2OffmWJqlzMu5hcxGqtQbZi9lbENJb8xWRWazkJyr7TtjUeUtTxsaqBWNojZwxPmO9L3es0erMaXnpOMWnfHUvlr/OipPegUr+oqBorbmkzHVu825W2ugj0vgOv1qsxBlG+Gsb7wMNFo/+BZ3edmdVrVjjtd8bEbxvAdUmkmAWo3vvI5H7NdHGQP4xSH0fe5h9Lr1TsK48/pX2bA27vevpWPQaLHHPvGgVmPtPxJuROeyH/HrJEBRaczZr2jtVlSbMBg4aAeWJwF6qO10h2Kg0lNvAhB/bH4K0YxoV2N5MCnhpsfYOuJTMVQpgqL1/dYBMpa02xvVLe7byKDyooe0GjVaRTH0hct41LO45jPLeubcj7MWurjmcKTOySTJctoka2mSrOaliLyWJLmYeyL9fJUkORKRw0n+LwnrmTi06M/uPlgbXXKtpiufuOISfpsEKCqVL70zlj6/d5YbdTFwUB9/TQKs19eqqxMki6qzZwS6iYSMPYspBQMtIkqXlVMqDLsboQtiY2hoCO5z3CknPDaKwUBjIJjyrtNOe3WSwdSonGDGc2at+WgkbgemRv973Au40AFs+RjLTdZrqzN9Wqdcwdfgqg/t0vgJXHBU8bO/MXTCxc5vhpWusWx/rjcWmW+Wjt5SazuaZinzJdPebt64neZ6m+39H3Jc2zHZwewqAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTExLTIxVDAwOjM1OjExKzAwOjAw/wuzVQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0xMS0yMVQwMDozNToxMSswMDowMI5WC+kAAABXelRYdFJhdyBwcm9maWxlIHR5cGUgaXB0YwAAeJzj8gwIcVYoKMpPy8xJ5VIAAyMLLmMLEyMTS5MUAxMgRIA0w2QDI7NUIMvY1MjEzMQcxAfLgEigSi4A6hcRdPJCNZUAAAAASUVORK5CYII=" />
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmCxUAIws1pWpqAAABXUlEQVQoz12RvWsTcQCGn9/dNbEp16ulN+tiEKoi6NaCUya3/g+Cg7hId3fRoeAmSkcrdHaoi5Neq9ChgzcElyAdtC3UxMa7exwSP/CdH94P3uCt8tHBzZ8hMFEABGTG5b3uOmXRc9Hc3NwlO7Ztm5mbe96eZcF2teRzC3d9546XRbzvR3fdMHO7Sqo4cIUu+1wkowPAmDOucYRUcTTJ3ec2r/jd4xlr9IkBSABqLvCQFeopUHHEE4bUE0BOybhDzckf5AcvgDaBJDDk7jS7ps//SiSQkk6tIxa4Tp8BNxjzCWDL3LcOHTny0KuueuwDUz/42nm3TABaDNhkzBlfWKRFzIinf0tCzIDH1LQ4JSIQqHhJgwQigIhAwz12uERDhHTYZIMZJEnqJn7PiJrvfKXhG2/4DBxzQkRSUxY9U1PbzjnvrLNmznnO1NSeZREmd1ch4D/rA5K4vNdd/wVNOa32dt65ygAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0xMS0yMVQwMDozNToxMSswMDowMP8Ls1UAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMTEtMjFUMDA6MzU6MTErMDA6MDCOVgvpAAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeremy Baltat - Portfolio</title>
-    <script type="module" crossorigin src="/assets/index.8a3b84e9.js"></script>
-    <link rel="stylesheet" href="/assets/index.5e518f2e.css">
+    <script type="module" crossorigin src="/assets/index.b62113ee.js"></script>
+    <link rel="stylesheet" href="/assets/index.ac3f0575.css">
   </head>
   <body>
     <div id="root"></div>

@@ -4,3 +4,6 @@ export * from "./TagsList/TagsList";
 export * from "./layouts";
 export * from "./ImageSlideshow/ImageSlideshow";
 export * from "./ProjectListing/ProjectListing";
+export * from "./ImageComparison/ImageComparison";
+export * from "./Footer/Footer";
+export * from "./Header/Header";

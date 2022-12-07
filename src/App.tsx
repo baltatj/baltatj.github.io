@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 // Components
-import { LandingPage, NotFoundPage } from "~components";
+import { ArtPage, LandingPage, NotFoundPage } from "~components";
 import { colorPrimary, colorSecondary, colorTertiary } from "./colors";
 // Style
 
@@ -68,6 +68,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/art" element={<ArtPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </ThemeProvider>

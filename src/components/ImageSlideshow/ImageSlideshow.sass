@@ -14,7 +14,9 @@
     align-items: flex-end
     height: 100%
     width: 100%
+    pointer-events: none
     button
+      pointer-events: all
       height: 100%
       background-color: rgba(0,0 ,0 ,0.3 )
       color: white
@@ -45,6 +47,36 @@
         &.active
           background-color: white
           width: 30px
+.slideshow-modal
+  .close-btn
+    background-color: black
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 15px
+    border-radius: 50%
+    height: 30px
+    width: 30px
+    position: absolute
+    top: 20px
+    right: 20px
+    cursor: pointer
+    &:hover
+      background-color: #333
+
+  .image-modal
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 85%
+    // padding: 100px
+    background-color: white
+    color: black
+
+    img
+      width: 100%
+      max-height: 100%
 // .default-button
 // display: flex
 // align-content: center

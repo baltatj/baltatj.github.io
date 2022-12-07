@@ -2,7 +2,8 @@ import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Avatar, Container, Link, Skeleton, Typography } from "@mui/material";
 import {
-  FilterTag,
+  Footer,
+  Header,
   ImageSlideshow,
   ProjectListing,
   TagsList,
@@ -12,32 +13,17 @@ import "./LandingPage.sass";
 
 const LandingPage = ({ ...props }: {}) => {
   return (
-    <div className="landing-page" {...props}>
-      {/* <div className="header">
-        <span>Header</span>
-        <ul className="socials">
-          <li>
-            <Link
-              target={"_blank"}
-              href="https://www.xing.com/profile/Jeremy_Baltat/cv"
-            >
-              Xing
-            </Link>
-          </li>
-          <li>
-            <Link
-              target={"_blank"}
-              href="https://www.linkedin.com/in/jeremy-baltat-61883466/"
-            >
-              LinkedIn
-            </Link>
-          </li>
-        </ul>
-      </div> */}
+    <div
+      className="landing-page"
+      {...props}
+      // onScroll={(e: any) => {
+      //   console.log(window.scrollY);
+      // }}
+    >
+      <Header />
       <Container className="intro-container" maxWidth="lg">
         <Grid container spacing={2}>
           <Grid xs={12} md={6}>
-            {/* <img src={"pics/portrait/jb-circle.png"} alt="" /> */}
             <Avatar
               className="avatar-self"
               alt="Myself"
@@ -47,7 +33,7 @@ const LandingPage = ({ ...props }: {}) => {
           </Grid>
           <Grid xs={12} md={6}>
             <Typography variant="h1" component="h1" color={"#ffd375"}>
-              Hi!
+              Hi,
             </Typography>
 
             <Typography variant="h4" component="h4" mb={3}>
@@ -55,18 +41,15 @@ const LandingPage = ({ ...props }: {}) => {
             </Typography>
 
             <Typography variant="subtitle1" gutterBottom>
-              Folgend meine vergangenen Projekten, bei denen ich mitgewirkt
-              habe. Diese sind teils während meines Informatikstudium, teils in
-              der Freizeit oder während einer Firmenanstellung entstanden.
+              Ich arbeite mit Leidenschaft an Software- und Kunstprojekten.
+              Folgende Projekte entstanden während meines Informatikstudium, in
+              der Freizeit oder während Firmenanstellungen.
             </Typography>
 
             <Typography variant="subtitle2" gutterBottom>
-              Neben meiner Arbeit als Software-Entwickler habe ich noch kreative
-              Freizeitaktivitäten. Falls du dazu etwas sehen möchtest,{" "}
               <Link href="/art" underline="hover" color={"#ffd375"}>
-                schaue hier
+                Was ich sonst noch in meiner Freizeit mache.
               </Link>
-              .
             </Typography>
           </Grid>
         </Grid>
@@ -111,7 +94,14 @@ const LandingPage = ({ ...props }: {}) => {
                   wurde ein eigenes Blender-Addon entwickelt.
                 </li>
               </ul>
-
+              <Link
+                href="https://www.vivents.io/"
+                target="_blank"
+                underline="hover"
+                sx={{ marginTop: "100px" }}
+              >
+                Vivents-Website
+              </Link>
               <TagsList
                 tags={[
                   "TypeScript",
@@ -245,10 +235,14 @@ const LandingPage = ({ ...props }: {}) => {
                 Studentenprojekt im Rahmen des Curriculums, Fach:
                 "Spielekonsolenprogrammierung"
               </p>
-
               <p>
                 Umsetzung eines "Rubiks Cube" auf einem Playstation Vita DevKit,
                 mit Touch-Steuerung
+              </p>
+              <p>
+                Eigenständige Einarbeitung in die offizielle Dokumentation des
+                SDKs, Shaderprogrammierung, Geometrieerzeugung und -verwaltung
+                zum interaktiven Drehen/Animieren der Würfelseiten
               </p>
 
               <TagsList tags={["C++", "PS-Vita SDK"]} />
@@ -270,7 +264,10 @@ const LandingPage = ({ ...props }: {}) => {
             <>
               <span className="creation-date">&#47;&#47; 2017 - 2018</span>
 
-              <p>Teamprojekt während des Studiums</p>
+              <p>
+                Teamprojekt während des Studiums, mit Entwickleranzahl
+                variierend: 4-10
+              </p>
               <ul className="decorated">
                 <li>Co-Teamleitung und -organisation</li>
                 <li>UI und HUD Programmierung</li>
@@ -299,7 +296,7 @@ const LandingPage = ({ ...props }: {}) => {
             </>
           }
         />
-        <ProjectListing
+        {/* <ProjectListing
           headline="Bachelor-Abschlussarbeit"
           left={<ImageSlideshow pics={["pics/placeholder.jpg"]} />}
           right={
@@ -311,8 +308,10 @@ const LandingPage = ({ ...props }: {}) => {
               <TagsList tags={["Unity", "Non-photorealistic rendering"]} />
             </>
           }
-        />
+        /> */}
       </Container>
+
+      <Footer />
     </div>
   );
 };

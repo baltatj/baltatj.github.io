@@ -1,10 +1,19 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "url";
+import svgLoader from "vite-svg-loader"; //TODO: this is for VUE only, use another
 
+/// <reference types="vite-svg-loader" />
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    svgLoader({
+      svgoConfig: {
+        multipass: true,
+      },
+    }),
+  ],
   assetsInclude: ["**/*.ttf", "**/*.svg", "**/*.png", "**/*.jpg"],
   publicDir: "static",
   build: {
@@ -16,6 +25,7 @@ export default defineConfig({
       "~components": fileURLToPath(
         new URL("./src/components", import.meta.url)
       ),
+      "~assets": fileURLToPath(new URL("./static", import.meta.url)),
       "~enums": fileURLToPath(new URL("./src/enums", import.meta.url)),
       "~layouts": fileURLToPath(
         new URL("src/components/layouts", import.meta.url)

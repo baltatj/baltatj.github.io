@@ -48,13 +48,31 @@ export const ImageSlideshow = ({ pics }: { pics: Array<string> }) => {
           </Box>
         </>
       </Modal>
-      <div className="actions">
-        <button
-          className={`${selectedIndex > 0 ? "" : "hide"}`}
-          onClick={() => prevSlide()}
-        >
-          ◄
-        </button>
+      <div className="img-wrapper">
+        <img
+          src={pics[selectedIndex]}
+          alt=""
+          onClick={() => {
+            setModalOpen(true);
+          }}
+        />
+        <div className="actions">
+          <button
+            className={`${selectedIndex > 0 ? "" : "hide"}`}
+            onClick={() => prevSlide()}
+          >
+            ◄
+          </button>
+
+          <button
+            className={`${selectedIndex < pics.length - 1 ? "" : "hide"}`}
+            onClick={() => nextSlide()}
+          >
+            ►
+          </button>
+        </div>
+      </div>
+      <div className="progress">
         <div className="progress-dots">
           {Array.from(Array(pics.length)).map((e, i) => {
             return (
@@ -68,21 +86,7 @@ export const ImageSlideshow = ({ pics }: { pics: Array<string> }) => {
             );
           })}
         </div>
-        <button
-          className={`${selectedIndex < pics.length - 1 ? "" : "hide"}`}
-          onClick={() => nextSlide()}
-        >
-          ►
-        </button>
       </div>
-
-      <img
-        src={pics[selectedIndex]}
-        alt=""
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      />
     </div>
   );
 };

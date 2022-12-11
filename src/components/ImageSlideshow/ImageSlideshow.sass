@@ -1,39 +1,55 @@
 .image-slideshow
-  position: relative
-  img
-    width: 100%
-    height: 100%
-    object-fit: cover
-    object-position: center
-    background-size: cover
+  display: flex
+  flex-direction: column
+  .img-wrapper
+    position: relative
     max-height: 400px
-  .actions
-    position: absolute
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
-    height: 100%
-    width: 100%
-    pointer-events: none
-    button
-      pointer-events: all
+    height: 400px
+    img
+      width: 100%
       height: 100%
-      background-color: rgba(0,0 ,0 ,0.3 )
-      color: white
-      border: none
-      padding: 0 10px
-      user-select: none
-      cursor: pointer
-      &.hide
-        opacity: 0
-        pointer-events: none
-      &:hover
-        background-color: rgba(0,0 ,0 ,0.6)
+      object-fit: cover
+      object-position: center
+      background-size: cover
+    .actions
+      position: absolute
+      top: 0
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height: 100%
+      width: 100%
+      pointer-events: none
+      padding: 0 5px
+      button
+        pointer-events: all
+        // height: 100%
+        height: 40px
+        width: 40px
+        border-radius: 50%
+        background-color: rgba(0,0 ,0 ,0.3 )
+        color: white
+        border: none
+        // padding: 0 10px
+        user-select: none
+        cursor: pointer
+        border: 1px solid rgba(255,255 ,255 ,0.3 )
+        &.hide
+          opacity: 0
+          pointer-events: none
+        &:hover
+          background-color: rgba(0,0 ,0 ,0.6)
 
+  .progress
+    display: flex
+    justify-content: center
+    align-content: center
+    width: 100%
+    padding: 10px 0
     .progress-dots
       display: flex
       gap: 5px
-      margin-bottom: 30px
+      // margin-bottom: 30px
       // box-shadow: 0px 5px 5px black
       div
         background-color: rgba(0,0 ,0 , 0.3)
@@ -54,7 +70,7 @@
     display: flex
     justify-content: center
     align-items: center
-    padding: 15px
+    padding: 30px
     border-radius: 50%
     height: 30px
     width: 30px

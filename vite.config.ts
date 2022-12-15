@@ -28,6 +28,7 @@ export default defineConfig({
       "~components": fileURLToPath(
         new URL("./src/components", import.meta.url)
       ),
+      "~root": fileURLToPath(new URL("./src/", import.meta.url)),
       "~assets": fileURLToPath(new URL("./", import.meta.url)),
       "~enums": fileURLToPath(new URL("./src/enums", import.meta.url)),
       "~layouts": fileURLToPath(

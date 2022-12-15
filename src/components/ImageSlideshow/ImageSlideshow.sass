@@ -11,6 +11,7 @@
       object-fit: cover
       object-position: center
       background-size: cover
+      border-radius: 8px
     .actions
       position: absolute
       top: 0
@@ -33,7 +34,7 @@
         // padding: 0 10px
         user-select: none
         cursor: pointer
-        border: 1px solid rgba(255,255 ,255 ,0.3 )
+        border: 1px solid rgba(255, 255, 255, 0.3)
         &.hide
           opacity: 0
           pointer-events: none
@@ -52,13 +53,13 @@
       // margin-bottom: 30px
       // box-shadow: 0px 5px 5px black
       div
-        background-color: rgba(0,0 ,0 , 0.3)
+        background-color: rgba(0,0 ,0 , 0.2)
         height: 9px
         width: 10px
         border-radius: 4px
         border: 2px solid white
         transition: width 250ms
-        box-shadow: 0px 0px 5px black
+        box-shadow: 0px 0px 5px rgba(0,0 ,0 , 0.3)
         cursor: pointer
         &.active
           background-color: white
@@ -93,33 +94,3 @@
     img
       width: 100%
       max-height: 100%
-// .default-button
-// display: flex
-// align-content: center
-// justify-content: center
-// align-items: center
-// height: 40px
-// width: 100px
-// border-radius: 20px
-// padding: 10px
-// background: linear-gradient(90deg, transparent, var(--color-primary))
-// background-color: var(--color-secondary)
-// color: var(--color-greyscale-1)
-// border: none
-// transition: background-color 500ms ease, border 500ms ease, color 500ms ease
-
-// &:hover
-//     background-color: var(--color-primary)
-//     border: 2px solid var(--color-primary-l40)
-
-// &:focus
-//     border: 2px solid var(--color-secondary-l40)
-
-// &:disabled
-//     border: 2px solid var(--color-greyscale-3)
-
-// &.big
-//     height: 50px
-
-// &.round
-//     width: 40px

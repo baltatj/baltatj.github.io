@@ -21,7 +21,8 @@
       "~enums": ["src/enums"],
       "~layouts": ["src/components/layouts"],
       "~types": ["src/types"],
-      "~fonts": ["src/fonts"]
+      "~fonts": ["src/fonts"],
+      "~root": ["src/"]
     }
   },
   "include": ["src"],

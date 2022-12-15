@@ -1,14 +1,22 @@
-body
-  background-color: #8a9ea3
-
 .landing-page
+  .section
+    display: flex
+    flex-direction: column
+    gap: 100px
+    padding: 100px 0
+    &.section-fmp
+      // background-color: #4e5b5e
+      background-color: var(--color-primary-900)
+    .section-header
+      color: white
   .container
     display: flex
     flex-direction: column
     gap: 100px
+
   .intro-container
-    margin-top: 80px
-    margin-bottom: 60px
+    margin-top: 150px
+    margin-bottom: 100px
     color: white
     .avatar-self
       display: flex

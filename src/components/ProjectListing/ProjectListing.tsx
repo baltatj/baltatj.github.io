@@ -18,12 +18,15 @@ export const ProjectListing = ({
         {props.headline}
       </Typography> */}
       <Grid container spacing={2}>
-        <Grid xs={12} md={8}>
+        <Grid xs={12} md={7}>
           {/* LEFT CHILDREN */}
-
           {props.left}
         </Grid>
-        <Grid xs={12} md={4}>
+        <Grid
+          xs={12}
+          md={5}
+          padding={{ xs: "0 20px 10px 20px", md: "5px 20px 10px 10px" }}
+        >
           {/* RIGHT CHILDREN */}
           <Typography variant="h4" component="h4">
             {props.headline}

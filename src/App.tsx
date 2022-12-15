@@ -41,6 +41,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: colorSecondary[500],
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         // disableElevation: true,

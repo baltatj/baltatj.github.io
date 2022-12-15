@@ -28,9 +28,7 @@ export const ProjectListing = ({
           padding={{ xs: "0 20px 10px 20px", md: "5px 20px 10px 10px" }}
         >
           {/* RIGHT CHILDREN */}
-          <Typography variant="h4" component="h4">
-            {props.headline}
-          </Typography>
+          <Typography variant="h4">{props.headline}</Typography>
           {props.right}
         </Grid>
       </Grid>
